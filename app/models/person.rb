@@ -6,6 +6,7 @@ class Person < ActiveRecord::Base
     self.gifts ||= 0
     self.quickies ||= 0
     self.smfls ||= 0
+    self.opened ||= 0
   end
 
   def self.find_next
