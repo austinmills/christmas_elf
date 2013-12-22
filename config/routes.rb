@@ -3,6 +3,8 @@ ChristmasElf::Application.routes.draw do
     collection do
       get 'next'
     end
+
+    get 'opened', on: :member
   end
 
 

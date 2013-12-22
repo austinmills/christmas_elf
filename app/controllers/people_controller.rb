@@ -66,6 +66,12 @@ class PeopleController < ApplicationController
     end
   end
 
+  def opened
+    opener = Person.find(params[:id])
+    opener.open_gift
+    redirect_to :action => :next
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_person

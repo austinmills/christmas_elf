@@ -23,5 +23,13 @@ class Person < ActiveRecord::Base
     gifts + quickies + smfls
   end
 
+  def open_gift
+    self.opened += 1
+    self.save
+  end
+
+  def percent_opened
+    100.0 * self.opened / total_gifts
+  end
 
 end

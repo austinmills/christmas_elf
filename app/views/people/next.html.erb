@@ -10,6 +10,7 @@
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -19,7 +20,8 @@
         <td><%= person.name %></td>
         <td><%= person.total_gifts %></td>
         <td><%= person.opened %></td>
-        <td><%= person.opened / person.total_gifts %></td>
+        <td><%= "#{person.percent_opened.round(1)}%" %></td>
+        <td><%= link_to 'Open a Gift!', opened_person_path(person) %></td>
         <td><%= link_to 'Show', person %></td>
         <td><%= link_to 'Edit', edit_person_path(person) %></td>
       </tr>
@@ -29,5 +31,4 @@
 
 <br>
 
-<%= link_to 'New Person', new_person_path %>
 <%= link_to 'Next Present!', :action => :next %>
