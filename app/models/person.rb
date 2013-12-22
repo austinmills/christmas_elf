@@ -11,6 +11,14 @@ class Person < ActiveRecord::Base
 
   def self.find_next
 
+    gift_array = []
+    Person.all.each do |person|
+      person.remaining_gifts.times do
+        gift_array << person
+      end
+    end
+
+    gift_array.sample
   end
 
   def self.total_all_gifts
@@ -26,6 +34,10 @@ class Person < ActiveRecord::Base
   def open_gift
     self.opened += 1
     self.save
+  end
+
+  def remaining_gifts
+    total_gifts - opened
   end
 
   def percent_opened

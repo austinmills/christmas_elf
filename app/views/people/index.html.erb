@@ -7,6 +7,7 @@
       <th>Gifts</th>
       <th>Quickies</th>
       <th>SMFLs</th>
+      <th>Opened</th>
       <th></th>
       <th></th>
       <th></th>
@@ -20,6 +21,7 @@
         <td><%= person.gifts %></td>
         <td><%= person.quickies %></td>
         <td><%= person.smfls %></td>
+        <td><%= person.opened %></td>
         <td><%= link_to 'Show', person %></td>
         <td><%= link_to 'Edit', edit_person_path(person) %></td>
         <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>

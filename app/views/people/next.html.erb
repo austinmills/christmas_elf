@@ -1,5 +1,6 @@
-<h1>Listing people</h1>
-
+<h1>Next Present: <%= @selected.name %>!</h1>
+<h2><%= link_to "Open #{@selected.name}'s Gift!", opened_person_path(@selected) %> </h2>
+<br>
 <table>
   <thead>
     <tr>
