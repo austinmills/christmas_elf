@@ -22,23 +22,8 @@
         <td><%= person.smfls %></td>
         <td><%= link_to 'Show', person %></td>
         <td><%= link_to 'Edit', edit_person_path(person) %></td>
-        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th>Total Gifts</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td><%= Person.total_all_gifts %></td>
-    </tr>
   </tbody>
 </table>
 

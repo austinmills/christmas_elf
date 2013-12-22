@@ -51,6 +51,11 @@ class PeopleController < ApplicationController
     end
   end
 
+  def next
+    @people = Person.all
+    @selected = Person.find_next
+  end
+
   # DELETE /people/1
   # DELETE /people/1.json
   def destroy
