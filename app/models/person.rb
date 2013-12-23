@@ -37,7 +37,7 @@ class Person < ActiveRecord::Base
   end
 
   def remaining_gifts
-    total_gifts - opened
+    return [total_gifts - opened, 0].max
   end
 
   def percent_opened
