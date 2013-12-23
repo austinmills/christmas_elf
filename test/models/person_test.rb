@@ -15,4 +15,11 @@ class PersonTest < ActiveSupport::TestCase
     assert(person.total_gifts == 16)
   end
 
+  test "Remaining gifts should be 0 if we've opened more than we have" do
+    person = Person.new
+    person.gifts = 10
+    person.opened = 11
+    assert(person.remaining_gifts == 0)
+  end
+
 end
