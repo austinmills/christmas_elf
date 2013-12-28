@@ -1,4 +1,5 @@
-<h1>Next Present: <%= @selected.name %>!</h1>
+<h1>Next Present: <%= @selected.name || "All presents opened!" %>!</h1>
+<h1><%= "  JOKER!!" if(Random.new.rand(100) < 11) %></h1>
 <h2><%= link_to "Open #{@selected.name}'s Gift!", opened_person_path(@selected) %> </h2>
 <br>
 <table>
@@ -29,7 +30,9 @@
     <% end %>
   </tbody>
 </table>
-
+<h2><%= "Opened #{Person.total_all_opened}/#{Person.total_all_gifts}: #{Person.total_percent_opened.round(1)}%" %> </h2>
 <br>
 
+
+<br>
 <%= link_to 'Next Present!', :action => :next %>

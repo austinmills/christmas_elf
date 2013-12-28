@@ -27,6 +27,16 @@ class Person < ActiveRecord::Base
     gifts_set.values.reduce(0,:+)
   end
 
+  def self.total_all_opened
+    people = Person.all
+    gifts_set = Hash[people.collect { |person| [person.id, person.opened] }]
+    gifts_set.values.reduce(0,:+)
+  end
+
+  def self.total_percent_opened
+    100.0 * total_all_opened / total_all_gifts
+  end
+
   def total_gifts
     gifts + quickies + smfls
   end
